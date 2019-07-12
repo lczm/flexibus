@@ -124,3 +124,7 @@ dmypy.json
 .pyre/
 
 .vscode/
+
+
+# YH Stuff
+mystuff/

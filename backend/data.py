@@ -1,3 +1,5 @@
+import os
+import csv
 import requests
 
 class Data:
@@ -41,7 +43,21 @@ class Data:
         data = self.get('Passengers')
         return data
 
+    def static_busstop(self) -> dict :
+        # do an assert check here later if the file exists
+        assert (os.path.isfile('./latlong.csv'))
+        latitude, longitude = [], []
+        with open('./latlong.csv', 'r') as file:
+            filereader = csv.reader(file, delimiter=',', quotechar='|')
+            for row in filereader:
+                latitude.append(row[0])
+                longitude.append(row[1])
+
+        return_dict = {'Latitude': latitude, 'Longitude': longitude}
+        return return_dict
+
+
 
 if __name__ == "__main__":
     data = Data()
-    print(data.busstop())
+    data.static_busstop()
