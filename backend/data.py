@@ -6,7 +6,13 @@ class Data:
             self.data = pickle.load(file)
 
     def stops(self):
+        latitudes = []
+        longitudes = []
+        for value in self.data.values():
+            latitudes.append(value['Latitude'])
+            longitudes.append(value['Longitude'])
+        
         return {
-            'Latitude': self.data['Latitude'],
-            'Longtitude': self.data['Longtitude']
+            'Latitude': latitudes,
+            'Longitude': longitudes
         }
