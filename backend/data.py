@@ -9,8 +9,9 @@ class Data:
         latitudes = []
         longitudes = []
         for value in self.data.values():
-            latitudes.append(value['Latitude'])
-            longitudes.append(value['Longitude'])
+            times = value['Hourly Taps'][7]
+            latitudes.extend([value['Latitude']] * times)
+            longitudes.extend([value['Longitude']] * times)
         
         return {
             'Latitude': latitudes,
