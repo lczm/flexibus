@@ -9,7 +9,7 @@ class Data:
         latitudes = []
         longitudes = []
         for value in self.data.values():
-            times = value['Hourly Taps'][7]
+            times = sum(list(value['Hourly Taps'].values()))
             latitudes.extend([value['Latitude']] * times)
             longitudes.extend([value['Longitude']] * times)
         
