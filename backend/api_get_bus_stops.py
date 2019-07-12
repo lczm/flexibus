@@ -17,7 +17,7 @@ while True:
             'Road Name': road_name,
             'Description': description,
             'Latitude': float(latitude),
-            'Longtitude': float(longitude),
+            'Longitude': float(longitude),
         }
     
     if len(details) < 500: break
