@@ -8,12 +8,19 @@ class Data:
     def stops(self):
         latitudes = []
         longitudes = []
+        weights = []
+        # minimum = min([sum(value['Hourly Taps']) for value in self.data.values()])
         for value in self.data.values():
-            times = value['Hourly Taps'][7]
-            latitudes.extend([value['Latitude']] * times)
-            longitudes.extend([value['Longitude']] * times)
+            # times = sum(value['Hourly Taps'].values()) // minimum
+            # latitudes.extend([value['Latitude']] * times)
+            # longitudes.extend([value['Longitude']] * times)
+
+            latitudes.append(value['Latitude'])
+            longitudes.append(value['Longitude'])
+            weights.append(sum(value['Hourly Taps'].values()))
         
         return {
             'Latitude': latitudes,
-            'Longitude': longitudes
+            'Longitude': longitudes,
+            'Weight': weights
         }
