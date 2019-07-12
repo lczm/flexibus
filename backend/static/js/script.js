@@ -62,12 +62,7 @@ function getPoints() {
   console.log(data['Longitude']);
  
   var dataList = [];
-  for (var i=1; i < data["Latitude"].length; i++) {
-    console.log(parseFloat(data["Latitude"][i]).toFixed(4));
-    console.log(parseFloat(data["Longitude"][i]).toFixed(4));
-    // pos = new google.maps.LatLng(parseFloat(data["Latitude"][i]).toFixed(4), parseFloat(data["Longitude"][i]).toFixed(4));
-    // pos = new google.maps.LatLng(data["Latitude"][i], data["Longitude"][i]);
-    // pos = new google.maps.LatLng(1.3521, 103.8198);
+  for (var i = 1; i < data["Latitude"].length; i++) {
     pos = new google.maps.LatLng(parseFloat(data["Latitude"][i]).toFixed(4), parseFloat(data["Longitude"][i]).toFixed(4));
     dataList.push(pos);
   }
