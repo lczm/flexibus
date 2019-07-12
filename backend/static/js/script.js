@@ -4,12 +4,6 @@
 
 var map, heatmap;
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   var elems = document.querySelectorAll('.collapsible');
-//   var instances = M.Collapsible.init(elems, options);
-// });
-
-
 // Heatmap data: 500 Points
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
