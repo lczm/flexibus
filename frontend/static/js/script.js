@@ -51,7 +51,12 @@ function changeOpacity() {
 
 // Heatmap data: 500 Points
 function getPoints() {
-  return [
-  ];
+  busstopData = busstop();
+  var dataList = [];
+  for (var i=0; i < busstopData.length; i++) {
+    dataList.push(new google.maps.LatLng(busstopData["Latitude"], busstopData["Longitude"]);
+  }
+  
+  return dataList;
 }
 
