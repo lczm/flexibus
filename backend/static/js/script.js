@@ -60,11 +60,24 @@ function getPoints() {
   const data = getx();
   console.log(data['Latitude']);
   console.log(data['Longitude']);
+  console.log(data['Weight']);
  
   var dataList = [];
   for (var i = 1; i < data["Latitude"].length; i++) {
-    pos = new google.maps.LatLng(parseFloat(data["Latitude"][i]).toFixed(4), parseFloat(data["Longitude"][i]).toFixed(4));
+    pos = new google.maps.LatLng(parseFloat(data["Latitude"][i]).toFixed(4), parseFloat(data["Longitude"][i]).toFixed(4), data["Weight"][i]);
     dataList.push(pos);
   }
   return dataList;
 }
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   var elems = document.querySelectorAll('.collapsible');
+//   var instances = M.Collapsible.init(elems, options);
+// });
+
+// // Or with jQuery
+
+// $(document).ready(function(){
+//   $('.collapsible').collapsible();
+// });
+      
