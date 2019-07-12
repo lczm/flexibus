@@ -13,7 +13,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/busstop')
+@app.route('/busstop', methods=['GET', 'POST'])
 def busstop():
     return jsonify(data.busstop())
 
