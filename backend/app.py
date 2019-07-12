@@ -15,7 +15,7 @@ def index():
 
 @app.route('/busstop', methods=['GET', 'POST'])
 def busstop():
-    return jsonify(data.static_busstop())
+    return jsonify(data.stops())
 
 
 if __name__ == '__main__':
