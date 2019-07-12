@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request, jsonify
-from backend.data import Data
+from data import Data
+from pprint import pprint
 
 app = Flask(__name__)
 data = Data()
@@ -18,4 +19,5 @@ def busstop():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8823)
+    app.run()
+    # app.run(debug=True)
