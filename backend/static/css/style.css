@@ -1,11 +1,19 @@
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
-#map {
-  height: 100%;
+#map, #map1 {
+  height: 1300px;
+}
+
+.title {
+  font-family: 'Merriweather Sans', sans-serif;
+  padding-left: 20px;
+}
+
+.side {
+  background-color: #F9F9F9;
 }
 /* Optional: Makes the sample page fill the window. */
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -17,7 +25,7 @@ html, body {
 #floating-panel {
   left: 77%;
   position: absolute;
-  top: 95%;
+  top: 0.8%;
   z-index: 5;
 }
 
