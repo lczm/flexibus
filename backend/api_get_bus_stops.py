@@ -1,7 +1,7 @@
-from api_base import API_Base
+from api import API
 import pickle
 
-api = API_Base()
+api = API()
 
 data = {}
 
@@ -12,7 +12,6 @@ while True:
     for detail in details:
         per_data = {}
         code, road_name, description, latitude, longitude = detail.values()
-        assert int(code) not in data
         data[int(code)] = {
             'Road Name': road_name,
             'Description': description,

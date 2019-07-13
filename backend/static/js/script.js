@@ -52,11 +52,6 @@ function changeOpacity() {
 
 function getPoints() {
   // busstop().then(data => console.log(data))
-
-//   getx().then((result) => {
-//     console.log(result);
-//   });
-
   let data = getx();
   console.log(data['Latitude']);
   console.log(data['Longitude']);
@@ -69,3 +64,11 @@ function getPoints() {
   }
   return dataList;
 }
+
+$(document).ready(function(){
+  $('ul.tabs').tabs();
+});
+
+$(document).ready(function(){
+  $('ul.tabs').tabs('select_tab', 'tab_id');
+});
