@@ -1,5 +1,7 @@
 // This example creates a triangular polygon with a hole in it.
 
+const COLORS = ['#f87400', '#ff0000', '#00ff00', '#0000ff', '#526a00', '#526acd', '#b429cd'];
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
@@ -13,27 +15,32 @@ function initMap() {
   console.log('length', datapoints.length);
 
   var polygon = [];
+  var flightPathArray = [];
 
   for (var j = 0; j < datapoints.length; j++) {
     // plot the start and the end location
     var temp = [];
-    main = datapoints[j]
-    if(main.length > 0) {
-      for (var i=0; i < main.length; i++) {
-        // temp.push({lat:main[i]['routes'][0]['legs'][0]['start_location']['lat'], lng: main[i]['routes'][0]['legs'][0]['start_location']['lng']}),
-        temp.push(new google.maps.LatLng(main[i]['routes'][0]['legs'][0]['start_location']['lat'], main[i]['routes'][0]['legs'][0]['start_location']['lng'])),
-        // temp.push({lat:main[i]['routes'][0]['legs'][0]['end_location']['lat'], lng: main[i]['routes'][0]['legs'][0]['end_location']['lng']})
-        temp.push(new google.maps.LatLng(main[i]['routes'][0]['legs'][0]['end_location']['lat'], main[i]['routes'][0]['legs'][0]['end_location']['lng']))
-      }
+    main = datapoints[j];
+    for (var i=0; i < main.length; i++) {
+      // temp.push({lat:main[i]['routes'][0]['legs'][0]['start_location']['lat'], lng: main[i]['routes'][0]['legs'][0]['start_location']['lng']}),
+      temp.push(new google.maps.LatLng(main[i]['routes'][0]['legs'][0]['start_location']['lat'], main[i]['routes'][0]['legs'][0]['start_location']['lng'])),
+      // temp.push({lat:main[i]['routes'][0]['legs'][0]['end_location']['lat'], lng: main[i]['routes'][0]['legs'][0]['end_location']['lng']})
+      temp.push(new google.maps.LatLng(main[i]['routes'][0]['legs'][0]['end_location']['lat'], main[i]['routes'][0]['legs'][0]['end_location']['lng']))
     }
-    // flightPlanCoordinates.push(temp);
-    polygon.push(new google.maps.Polyline({
-      path: temp,
-      geodesic: true,
-      strokeColor: '#FF0000',
-      strokeOpacity: 1.0,
-      strokeWeight: 2
-    }));
+
+    flightPathArray.push(temp)
+  }
+
+  for (let i = 0; i < flightPathArray.length; i++) {
+    var flightPath = new google.maps.Polyline({
+    path: flightPathArray[i],
+    geodesic: true,
+    strokeColor: COLORS[i % COLORS.length],
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+
+  flightPath.setMap(map);
   }
 
   // let data = getx();
@@ -49,15 +56,6 @@ function initMap() {
   //   {lat: data['Latitude'][2], lng: data['Longitude'][2]}
   // ];
 
-//   var flightPath = new google.maps.Polyline({
-//     path: flightPlanCoordinates,
-//     geodesic: true,
-//     strokeColor: '#FF0000',
-//     strokeOpacity: 1.0,
-//     strokeWeight: 2
-//   });
 
-  // flightPath.setMap(map);
   // polygon.setMap(map);
-  map.fitBounds(bounds);
 }

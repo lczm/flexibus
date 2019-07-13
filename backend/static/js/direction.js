@@ -24,7 +24,7 @@ class Direction {
       // plot these points out on the graph
       // console.log(data['routes'][0]['legs'][0]['start_location'])
       // console.log(data['routes'][0]['legs'][0]['end_location'])
-      console.log(data);
+      console.log('DUP', data);
       return_data = data;
     })
     return return_data;

@@ -32,7 +32,7 @@ def busstop():
 
 @app.route('/cors', methods=['GET', 'POST'])
 def cors():
-    data_reply = data.routes(3, 10)
+    data_reply = data.routes(20, 30)
     replys = []
 
     print(len(data_reply))
@@ -46,7 +46,6 @@ def cors():
         reply2 = []
         for latlongA, latlongB in pairwise(zip(lat, long)):
             reply2.append(requests.get('https://maps.googleapis.com/maps/api/directions/json?origin={},{}&destination={},{}&key=AIzaSyA63GKyT88PRUP9Gp10HFuJwWeAWxBgu-c'.format(*latlongA, *latlongB)).json())
-        replys.append(reply2)
         replys.append(reply2)
 
     # return_reply = [reply.json() for reply in replys]
