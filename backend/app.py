@@ -32,7 +32,7 @@ def busstop():
 
 @app.route('/cors', methods=['GET', 'POST'])
 def cors():
-    data_reply = data.routes(20, 30)
+    data_reply = data.routes(8, 8)
     replys = []
 
     print(len(data_reply))

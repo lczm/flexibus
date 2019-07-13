@@ -19,6 +19,7 @@
     <script src="../static/js/ajax.js"></script>
     <script src="../static/js/script.js"></script>
     <script src="../static/js/materialautoload.js"></script>
+    <script src="../static/js/direction.js"></script>
   </head>
 
   <body>
@@ -58,6 +59,10 @@
             </ul>
           </div>
         </div>
+        <div class="containersize section scrollspy" id="technologies">
+          <h2 class="subject">TECHNOLOGIES</h2>
+          <img class="center-align" src="../static/images/technologies.png" alt="busstop" width="100%">
+        </div>
         </div>
         <div class="col s2">
           <div class="col hide-on-small-only m3 l2">
@@ -66,6 +71,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#problem">Problem</a></li>
                 <li><a href="#solution">Solution</a></li>
+                <li><a href="#technologies">Technologies</a></li>
                 <li><a href="#map">Map</a></li>
               </ul>
             </div>
@@ -73,10 +79,9 @@
         </div>
       </div>
     <div id="floating-panel">
-      <button class="button" onclick="toggleHeatmap()">Toggle Heatmap</button>
-      <button class="button" onclick="changeGradient()">Change gradient</button>
-      <button class="button" onclick="changeRadius()">Change radius</button>
-      <button class="button" onclick="changeOpacity()">Change opacity</button>
+      <button class="button waves-effect waves-grey lighten-2 white" onclick="toggleHeatmap()">Toggle Heatmap</button>
+      <button class="button waves-effect waves-grey lighten-2 white" onclick="toggleRoutes()">Toggle Routes</button>
+      <button class="button waves-effect waves-grey lighten-2 white" onclick="changeOpacity()">Change opacity</button>
     </div>
     <div class="row side nobottommargin">
       <div class="col s2">
@@ -84,32 +89,20 @@
           <h4 class="title">flexibus</h4>
         </div>
         <div class="row">
-          <ul class="collapsible popout">
+          <ul class="collection scrollbar" id="collapsibleInsert">
             <li>
-              <div class="collapsible-header">Dynamic Bus Route #1</div>
+              <div class="collection-item">Dynamic Bus Route #1</div>
                 <div class="collapsible-body">
-                  <p>Bus route thing.</p>
-                  <p>Bus route thing.</p>
-                  <p>Bus route thing.</p>
-                  <p>Bus route thing.</p>
                 </div>
             </li>
             <li>
               <div class="collapsible-header">Dyanmic Bus Route #2</div>
                 <div class="collapsible-body">
-                  <p>Bus route thing.</p>
-                  <p>Bus route thing.</p>
-                  <p>Bus route thing.</p>
-                  <p>Bus route thing.</p>
                 </div>
             </li>
             <li>
               <div class="collapsible-header">Dynamic Bus Route #3</div>
                 <div class="collapsible-body">
-                  <p>Bus route thing.</p>
-                  <p>Bus route thing.</p>
-                  <p>Bus route thing.</p>
-                  <p>Bus route thing.</p>
                 </div>
             </li>
           </ul>

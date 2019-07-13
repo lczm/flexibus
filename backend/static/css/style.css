@@ -4,6 +4,14 @@
   height: 100vh;
 }
 
+.scrollbar {
+  overflow: auto;
+}
+
+body {
+  background-color: #ffffff;
+}
+
 .title {
   font-family: 'Merriweather Sans', sans-serif;
   padding-left: 20px;
@@ -30,6 +38,10 @@
 .bullets li {
   list-style-type: square !important;
   font-size: 3em;
+}
+
+.mapborder {
+  border-top: 1px solid grey;
 }
 
 .quote {
@@ -73,7 +85,7 @@ html, body {
 #floating-panel {
   left: 17.3%;
   position: absolute;
-  top: 398%;
+  top: 502%;
   z-index: 5;
   text-align: center;
 }
@@ -112,8 +124,8 @@ html, body {
     border-top-left-radius: 2px;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    /* border: 1px solid rgba(0, 0, 0, 0.14902); */
-    /* -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; */
+    border : 0px solid rgba(0, 0, 0, 0.14902);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
     box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
     min-width: 28px;
   }
