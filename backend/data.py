@@ -51,7 +51,6 @@ class Data:
             
             routes.append(route)
 
-
         latitudes = []
         longitudes = []
         for route in routes:
