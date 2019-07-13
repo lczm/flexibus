@@ -1,12 +1,52 @@
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 #map, #map1 {
-  height: 1300px;
+  height: 100vh;
 }
 
 .title {
   font-family: 'Merriweather Sans', sans-serif;
   padding-left: 20px;
+}
+
+.subject {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(to right, #029a40, #029a40) no-repeat;
+  background-size: 60% 9px;
+  background-position: left bottom;
+  text-transform: uppercase;
+  font-size: 2.3em;
+  font-family: oswald, sans-serif;
+  display: inline-block;
+  vertical-align: top;
+  padding-bottom: 15px;
+}
+
+.spacing {
+  padding-top: 50px;
+}
+
+.bullets li {
+  list-style-type: square !important;
+  font-size: 3em;
+}
+
+.quote {
+  transform: rotate(180deg);
+  color: #f21b3f;
+  padding-bottom: 50px;
+}
+
+.statement {
+  font-size: 3em;
+  padding-left: 16px;
+}
+
+
+.containersize {
+  padding-top: 50px;
+  height: 100vh;
 }
 
 .side {

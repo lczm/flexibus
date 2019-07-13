@@ -73,3 +73,15 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('ul.tabs').tabs('select_tab', 'tab_id');
 });
+
+$(document).ready(function(){
+  $('.scrollspy').scrollSpy();
+});
+
+$(document).ready(function(){
+  $('.pushpin').pushpin();
+});
+
+$(document).ready(function(){
+  $('#pinned').pushpin({ top: $('#pinned').offset().top, bottom: 1700 });
+});

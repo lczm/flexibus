@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script
-<<<<<<< HEAD
 			  src="https://code.jquery.com/jquery-3.4.1.min.js"
 			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 			  crossorigin="anonymous"></script>
@@ -21,58 +22,103 @@
   </head>
 
   <body>
-    <div class="container center-align">
-      <h1 class="title">flexibus</h1>
-      <p>Fast. Convenient. Effective.</p>
-    </div>
-    <div id="floating-panel">
-      <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
-        <li class="tab"><a href="#map">Test 1</a></li>
-        <li class="tab"><a class="active" href="#map2">Test 2</a></li>
-      </ul>
-    </div>
+    <div class="row">
+      <div class="col s2"></div>
+      <div class="col s8">
+        <div class="section scrollspy" id="home">
+          <h1 class="title center-align">flexibus</h1>
+          <h5 class="center-align">Fast. Convenient. Effective.</h5>
+          <img class="center-align" src="../static/images/undraw_Bus_stop_8ib0.svg" alt="busstop" width="100%">
+        </div>
+        <div class="containersize section scrollspy">
+          <div>
+            <div id="problem">
+              <h2 class="subject">THE PROBLEM</h2>
+            </div>
+          </div>
+          <div class="container">
+            <i class="material-icons large quote">format_quote</i>
+            <h4 class="statement">
+              How can we provide access to safe, affordable, accessible and
+              sustainable transport systems for all, improving road safety,
+              notably by expanding public transport, with special attention
+              to the needs of those in vulnerable situations?
+            </h4>
+          </div>
+        </div>
+        <div class="containersize section scrollspy">
+          <div>
+            <div class="section scrollspy" id="solution">
+              <h2 class="subject">OUR SOLUTION</h2>
+            </div>
+          </div>
+          <div class="container">
+            <ul class="bullets" id="solution">
+              <li>test</li>
+            </ul>
+          </div>
+        </div>
+        </div>
+        <div class="col s2">
+          <div class="col hide-on-small-only m3 l2">
+            <div class="toc-wrapper" id="pinned">
+              <ul class="section table-of-contents">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#map">Map</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- <div id="floating-panel"> -->
+    <!--   <ul class="tabs tabs-fixed-width tab-demo z-depth-1"> -->
+    <!--     <li class="tab"><a class="active" href="#map">Test 1</a></li> -->
+    <!--     <li class="tab"><a href="#map2">Test 2</a></li> -->
+    <!--   </ul> -->
+    <!-- </div> -->
     <div class="row side">
       <div class="col s2">
         <div class="row">
           <h4 class="title">flexibus</h4>
         </div>
+        <div class="row">
+          <ul class="collapsible popout">
+            <li>
+              <div class="collapsible-header">Dynamic Bus Route #1</div>
+                <div class="collapsible-body">
+                  <p>Bus route thing.</p>
+                  <p>Bus route thing.</p>
+                  <p>Bus route thing.</p>
+                  <p>Bus route thing.</p>
+                </div>
+            </li>
+            <li>
+              <div class="collapsible-header">Dyanmic Bus Route #2</div>
+                <div class="collapsible-body">
+                  <p>Bus route thing.</p>
+                  <p>Bus route thing.</p>
+                  <p>Bus route thing.</p>
+                  <p>Bus route thing.</p>
+                </div>
+            </li>
+            <li>
+              <div class="collapsible-header">Dynamic Bus Route #3</div>
+                <div class="collapsible-body">
+                  <p>Bus route thing.</p>
+                  <p>Bus route thing.</p>
+                  <p>Bus route thing.</p>
+                  <p>Bus route thing.</p>
+                </div>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col s10" id="map"></div>
-      <div class="col s10" id="map1"></div>
+      <div class="col s10 section scrollspy" id="map"></div>
     </div>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA63GKyT88PRUP9Gp10HFuJwWeAWxBgu-c&libraries=visualization&callback=initMap">
     </script>
-
-    <ul class="collapsible popout">
-      <li>
-        <div class="collapsible-header">Dynamic Bus Route #1</div>
-          <div class="collapsible-body">
-            <p>Bus route thing.</p>
-            <p>Bus route thing.</p>
-            <p>Bus route thing.</p>
-            <p>Bus route thing.</p>
-          </div>
-      </li>
-      <li>
-        <div class="collapsible-header">Dyanmic Bus Route #2</div>
-          <div class="collapsible-body">
-            <p>Bus route thing.</p>
-            <p>Bus route thing.</p>
-            <p>Bus route thing.</p>
-            <p>Bus route thing.</p>
-          </div>
-      </li>
-      <li>
-        <div class="collapsible-header">Dynamic Bus Route #3</div>
-          <div class="collapsible-body">
-            <p>Bus route thing.</p>
-            <p>Bus route thing.</p>
-            <p>Bus route thing.</p>
-            <p>Bus route thing.</p>
-          </div>
-      </li>
-    </ul>
-
   </body>
 </html>
