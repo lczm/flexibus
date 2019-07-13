@@ -53,21 +53,17 @@ function changeOpacity() {
 function getPoints() {
   // busstop().then(data => console.log(data))
 
-  busstop().then((result) => {
-    console.log(result);
-  });
-
-  // console.log(json['Latitude']);
-  // console.log(json['Longitude']);
+  const data = getx();
+  console.log(data['Latitude']);
+  console.log(data['Longitude']);
+  console.log(data['Weight']);
  
-  // var dataList = [];
-  // for (var i=0; i < json["Latitude"].length; i++) {
-  //   pos = new google.maps.LatLng(parseFloat(json["Latitude"][i].toFixed(4)), parseFloat(json["Longitude"][i].toFixed(4)));
-  //   dataList.push(pos);
-  // }
-  // console.log(dataList);
-  // return dataList;
-  return 0;
+  var dataList = [];
+  for (var i = 1; i < data["Latitude"].length; i++) {
+    pos = new google.maps.LatLng(parseFloat(data["Latitude"][i]).toFixed(4), parseFloat(data["Longitude"][i]).toFixed(4), data["Weight"][i]);
+    dataList.push(pos);
+  }
+  return dataList;
 }
 
 $(document).ready(function(){

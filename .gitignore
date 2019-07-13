@@ -126,5 +126,6 @@ dmypy.json
 .vscode/
 
 
-# YH Stuff
-mystuff/
+# Pickle Stuff
+backend/pickle*
+backend/*.ipynb

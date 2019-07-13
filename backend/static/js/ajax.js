@@ -1,8 +1,12 @@
-function getx() {
+function getx(){
+  var value
   $.ajax({
-  url: "test.html",
-  context: document.body
-  }).done(function() {
-    console.log('done')
-  });
-}
+      type: "POST",
+      url: "/busstop",
+      async: false,
+  })
+  .done(function(data) {
+    value = data
+  })
+  return value
+} 
