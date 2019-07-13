@@ -25,14 +25,14 @@
     <div class="row">
       <div class="col s2"></div>
       <div class="col s8">
-        <div class="section scrollspy" id="home">
+        <div class="section scrollspy home" id="home">
           <h1 class="title center-align">flexibus</h1>
           <h5 class="center-align">Fast. Convenient. Effective.</h5>
           <img class="center-align" src="../static/images/undraw_Bus_stop_8ib0.svg" alt="busstop" width="100%">
         </div>
-        <div class="containersize section scrollspy">
+        <div class="containersize section scrollspy" id="problem">
           <div>
-            <div id="problem">
+            <div>
               <h2 class="subject">THE PROBLEM</h2>
             </div>
           </div>
@@ -46,9 +46,9 @@
             </h4>
           </div>
         </div>
-        <div class="containersize section scrollspy">
+        <div class="containersize section scrollspy" id="solution">
           <div>
-            <div class="section scrollspy" id="solution">
+            <div class="section scrollspy">
               <h2 class="subject">OUR SOLUTION</h2>
             </div>
           </div>
@@ -80,13 +80,13 @@
           </div>
         </div>
       </div>
-    <!-- <div id="floating-panel"> -->
-    <!--   <ul class="tabs tabs-fixed-width tab-demo z-depth-1"> -->
-    <!--     <li class="tab"><a class="active" href="#map">Test 1</a></li> -->
-    <!--     <li class="tab"><a href="#map2">Test 2</a></li> -->
-    <!--   </ul> -->
-    <!-- </div> -->
-    <div class="row side">
+    <div id="floating-panel">
+      <button class="button" onclick="toggleHeatmap()">Toggle Heatmap</button>
+      <button class="button" onclick="changeGradient()">Change gradient</button>
+      <button class="button" onclick="changeRadius()">Change radius</button>
+      <button class="button" onclick="changeOpacity()">Change opacity</button>
+    </div>
+    <div class="row side nobottommargin">
       <div class="col s2">
         <div class="row">
           <h4 class="title">flexibus</h4>

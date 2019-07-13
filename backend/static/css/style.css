@@ -43,10 +43,22 @@
   padding-left: 16px;
 }
 
+.home {
+  margin-bottom: 100px;
+}
 
 .containersize {
   padding-top: 50px;
   height: 100vh;
+}
+
+.nobottommargin {
+  margin-bottom: 0 !important;
+}
+
+.collapsible.popout li {
+  margin: 0 !important;
+  box-shadow: none !important;
 }
 
 .side {
@@ -57,32 +69,52 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
 #floating-panel {
+  left: 17.3%;
   position: absolute;
+  top: 398%;
   z-index: 5;
   text-align: center;
 }
-#floating-panel {
-  left: 77%;
-  position: absolute;
-  top: 0.8%;
-  z-index: 5;
-}
+
+/* .button { */
+/*   background-color : #fff; */
+/*   border : 2px solid #fff; */
+/*   border-radius : 3px; */
+/*   box-shadow : 0 2px 6px rgba(0,0,0,.3); */
+/*   cursor : pointer; */
+/*   text-align : center; */
+/*   margin-left: -3px; */
+/*   color : rgb(25,25,25); */
+/*   font-family : 'Roboto', sans-serif; */
+/*   font-size : 16px; */
+/*   line-height : 38px; */
+/*   padding-left : 5px; */
+/*   padding-right : 5px; */
+/* } */
 
 .button {
-  background-color : #fff;
-  border : 2px solid #fff;
-  border-radius : 3px;
-  box-shadow : 0 2px 6px rgba(0,0,0,.3);
-  cursor : pointer;
-  margin-bottom : 22px;
-  text-align : center;
-
-  color : rgb(25,25,25);
-  font-family : 'Roboto', sans-serif;
-  font-size : 16px;
-  line-height : 38px;
-  padding-left : 5px;
-  padding-right : 5px;
-}
+    line-height : 38px;
+    cursor: pointer;
+    direction: ltr;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-family: "Roboto", sans-serif;
+    -webkit-user-select: none;
+    margin-left: -4px;
+    font-size: 18px !important;
+    background-color: rgb(255, 255, 255);
+    padding: 1px 6px;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /* border: 1px solid rgba(0, 0, 0, 0.14902); */
+    /* -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; */
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+    min-width: 28px;
+  }
 
