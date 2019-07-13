@@ -32,8 +32,8 @@ class Data:
 
     def routes(self, n_routes, n_stops):
         routes = []
-        for _ in range(n_routes):
-            code = random.choice(list(self.data.keys()))
+        rand_codes = random.sample(list(self.data.keys()), n_routes)
+        for code in rand_codes:
             stop = self.data[code]
             route = [code]
             for _ in range(n_stops):
@@ -51,7 +51,7 @@ class Data:
                 
                 if not success:
                     break
-            
+                
             routes.append(route)
 
         latitudes = []
