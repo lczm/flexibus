@@ -15,14 +15,15 @@ function initMap() {
 
   for (var j = 0; j < datapoints.length; j++) {
     // plot the start and the end location
-    main = datapoints[j]['routes'][0]['legs'][0]
-    console.log(main['steps'].length);
-    if( main['steps'].length > 0) {
-      for (var i=0; i < main['steps'].length; i++) {
-        flightPlanCoordinates.push({lat:main['steps'][i]['start_location']['lat'], lng: main['steps'][i]['start_location']['lng']})
-        flightPlanCoordinates.push({lat:main['steps'][i]['end_location']['lat'], lng: main['steps'][i]['end_location']['lng']})
+    var temp = [];
+    main = datapoints[j]
+    if(main.length > 0) {
+      for (var i=0; i < main.length; i++) {
+        temp.push({lat:main[i]['routes'][0]['legs'][0]['start_location']['lat'], lng: main[i]['routes'][0]['legs'][0]['start_location']['lng']}),
+        temp.push({lat:main[i]['routes'][0]['legs'][0]['end_location']['lat'], lng: main[i]['routes'][0]['legs'][0]['end_location']['lng']})
       }
     }
+    flightPlanCoordinates.push(temp);
   }
 
   // let data = getx();

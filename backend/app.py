@@ -3,6 +3,7 @@
 from flask import Flask, render_template, redirect, request, jsonify
 from data import Data
 from pprint import pprint
+from itertools import tee
 
 import requests
 
@@ -11,6 +12,11 @@ data = Data()
 
 # bus stop details
 # latitude, longitutde, magnitude
+
+def pairwise(iterable):
+    a, b = tee(iterable)
+    next(b, None)
+    return zip(a, b)
 
 @app.route('/')
 def index():
@@ -26,21 +32,28 @@ def busstop():
 
 @app.route('/cors', methods=['GET', 'POST'])
 def cors():
-    data_reply = data.stops()
+    data_reply = data.routes(2, 10)
     replys = []
 
     print(len(data_reply))
     pprint(data_reply.keys())
 
-    for i in range(len(data_reply[list(data_reply.keys())[0]]) - 1):
-    # for i in range(1000):
-        replys.append(requests.get('https://maps.googleapis.com/maps/api/directions/json?origin={},{}&destination={},{}&key=AIzaSyA63GKyT88PRUP9Gp10HFuJwWeAWxBgu-c'.format(data_reply['Latitude'][i], data_reply['Longitude'][i], data_reply['Latitude'][i + 1], data_reply['Longitude'][i + 1])))
+    # for i in range(len(data_reply[list(data_reply.keys())[0]]) - 1):
+    # for i in range(len(data_reply[0])):
+    latitudes = data_reply['Latitude']
+    longitudes = data_reply['Longitude']
+    for lat, long in zip(latitudes, longitudes):
+        reply2 = []
+        for latlongA, latlongB in pairwise(zip(lat, long)):
+            reply2.append(requests.get('https://maps.googleapis.com/maps/api/directions/json?origin={},{}&destination={},{}&key=AIzaSyA63GKyT88PRUP9Gp10HFuJwWeAWxBgu-c'.format(*latlongA, *latlongB)).json())
+        replys.append(reply2)
+        replys.append(reply2)
 
-    return_reply = [reply.json() for reply in replys]
+    # return_reply = [reply.json() for reply in replys]
 
-    print(len(return_reply))
+    # print(len(return_reply))
 
-    return jsonify({'data': return_reply})
+    return jsonify({'data': replys})
 
 
 if __name__ == '__main__':
