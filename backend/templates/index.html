@@ -5,25 +5,40 @@
     <title>Heatmaps</title>
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
     <link rel="stylesheet" type="text/css" href="static/css/ajax.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
     <script
-      src="https://code.jquery.com/jquery-3.3.1.js"
-      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous"></script>
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
     <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="static/js/ajax.js"></script>
     <script src="static/js/script.js"></script>
 
   </head>
 
   <body>
-    <div id="floating-panel">
-      <button class="button" onclick="toggleHeatmap()">Toggle Heatmap</button>
-      <button class="button" onclick="changeGradient()">Change gradient</button>
-      <button class="button" onclick="changeRadius()">Change radius</button>
-      <button class="button" onclick="changeOpacity()">Change opacity</button>
+    <div class="container center-align">
+      <h1 class="title">flexibus</h1>
+      <p>Fast. Convenient. Effective.</p>
     </div>
-    <div id="map"></div>
+    <div id="floating-panel">
+      <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+        <li class="tab"><a href="#map">Test 1</a></li>
+        <li class="tab"><a class="active" href="#map2">Test 2</a></li>
+      </ul>
+    </div>
+    <div class="row side">
+      <div class="col s2">
+        <div class="row">
+          <h4 class="title">flexibus</h4>
+        </div>
+      </div>
+      <div class="col s10" id="map"></div>
+      <div class="col s10" id="map1"></div>
+    </div>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA63GKyT88PRUP9Gp10HFuJwWeAWxBgu-c&libraries=visualization&callback=initMap">
     </script>
