@@ -57,7 +57,7 @@ function getPoints() {
 //     console.log(result);
 //   });
 
-  const data = getx();
+  let data = getx();
   console.log(data['Latitude']);
   console.log(data['Longitude']);
   console.log(data['Weight']);

@@ -1,4 +1,6 @@
 import pickle
+import requests
+from pprint import pprint
 
 class Data:
     def __init__(self):
@@ -24,3 +26,9 @@ class Data:
             'Longitude': longitudes,
             'Weight': weights
         }
+
+
+# reply = requests.get('https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyA63GKyT88PRUP9Gp10HFuJwWeAWxBgu-c')
+
+# pprint(reply)
+# print(reply.json())
