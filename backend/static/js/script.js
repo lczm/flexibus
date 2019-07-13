@@ -52,8 +52,7 @@ function changeOpacity() {
 
 function getPoints() {
   // busstop().then(data => console.log(data))
-
-  const data = getx();
+  let data = getx();
   console.log(data['Latitude']);
   console.log(data['Longitude']);
   console.log(data['Weight']);

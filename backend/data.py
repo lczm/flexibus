@@ -1,6 +1,9 @@
 import pickle
+import requests
+from pprint import pprint
 import random
 import numpy as np
+
 
 class Data:
     def __init__(self):
