@@ -74,7 +74,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('.scrollspy').scrollSpy();
+  $('.scrollspy').scrollSpy({scrollOffset: 0});
 });
 
 $(document).ready(function(){
@@ -82,5 +82,5 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('#pinned').pushpin({ top: $('#pinned').offset().top, bottom: 1700 });
+  $('#pinned').pushpin({ top: $('#pinned').offset().top, bottom: 2200 });
 });
