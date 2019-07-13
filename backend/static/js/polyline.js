@@ -8,10 +8,11 @@ function initMap() {
   });
 
   direction = new Direction();
-  datapoints = direction.getDirection()['data'];
+  var datapoints = direction.getDirection()['data'];
   console.log(datapoints);
+  console.log('length', datapoints.length);
 
-  var flightPlanCoordinates = [];
+  var polygon = [];
 
   for (var j = 0; j < datapoints.length; j++) {
     // plot the start and the end location
@@ -19,11 +20,20 @@ function initMap() {
     main = datapoints[j]
     if(main.length > 0) {
       for (var i=0; i < main.length; i++) {
-        temp.push({lat:main[i]['routes'][0]['legs'][0]['start_location']['lat'], lng: main[i]['routes'][0]['legs'][0]['start_location']['lng']}),
-        temp.push({lat:main[i]['routes'][0]['legs'][0]['end_location']['lat'], lng: main[i]['routes'][0]['legs'][0]['end_location']['lng']})
+        // temp.push({lat:main[i]['routes'][0]['legs'][0]['start_location']['lat'], lng: main[i]['routes'][0]['legs'][0]['start_location']['lng']}),
+        temp.push(new google.maps.LatLng(main[i]['routes'][0]['legs'][0]['start_location']['lat'], main[i]['routes'][0]['legs'][0]['start_location']['lng'])),
+        // temp.push({lat:main[i]['routes'][0]['legs'][0]['end_location']['lat'], lng: main[i]['routes'][0]['legs'][0]['end_location']['lng']})
+        temp.push(new google.maps.LatLng(main[i]['routes'][0]['legs'][0]['end_location']['lat'], main[i]['routes'][0]['legs'][0]['end_location']['lng']))
       }
     }
-    flightPlanCoordinates.push(temp);
+    // flightPlanCoordinates.push(temp);
+    polygon.push(new google.maps.Polyline({
+      path: temp,
+      geodesic: true,
+      strokeColor: '#FF0000',
+      strokeOpacity: 1.0,
+      strokeWeight: 2
+    }));
   }
 
   // let data = getx();
@@ -39,13 +49,15 @@ function initMap() {
   //   {lat: data['Latitude'][2], lng: data['Longitude'][2]}
   // ];
 
-  var flightPath = new google.maps.Polyline({
-    path: flightPlanCoordinates,
-    geodesic: true,
-    strokeColor: '#FF0000',
-    strokeOpacity: 1.0,
-    strokeWeight: 2
-  });
+//   var flightPath = new google.maps.Polyline({
+//     path: flightPlanCoordinates,
+//     geodesic: true,
+//     strokeColor: '#FF0000',
+//     strokeOpacity: 1.0,
+//     strokeWeight: 2
+//   });
 
-  flightPath.setMap(map);
+  // flightPath.setMap(map);
+  // polygon.setMap(map);
+  map.fitBounds(bounds);
 }
