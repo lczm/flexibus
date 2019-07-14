@@ -179,5 +179,5 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('#pinned').pushpin({ top: $('#pinned').offset().top, bottom: 3200 });
+  $('#pinned').pushpin({ top: $('#pinned').offset().top, bottom: 4800 });
 });
