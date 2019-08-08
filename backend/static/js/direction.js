@@ -1,7 +1,7 @@
 class Direction {
   constructor() {
     this.baseurl = "https://maps.googleapis.com/maps/api/directions/json?"
-    this.key = "AIzaSyA63GKyT88PRUP9Gp10HFuJwWeAWxBgu-c"
+    // insert key
     this.url = ""
   }
 
