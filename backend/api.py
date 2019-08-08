@@ -3,7 +3,7 @@ import requests
 class API:
     def __init__(self):
         self.HEADERS = {
-            'AccountKey': 'BdC8OjgqTWqDRFXUltCFHQ==',
+            'AccountKey': '', # Insert key
             'accept': 'application/json'
         }
         self.URI = 'http://datamall2.mytransport.sg/ltaodataservice/'
